@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootswatch/dist/journal/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-customization.scss" />
+    <link rel="stylesheet" href="styles.scss" />
+</head>
+
+<body>
+    <button data-bs-toggle="tooltip" data-bs-title="Default tooltip">
+        This is a button
+    </button>
+    <button data-bs-toggle="popover" data-bs-title="Popover title"
+        data-bs-content="And here's some amazing content. It's very engaging. Right?">
+        This is another button
+    </button>
+
+    <button class="btn btn-primary">I should be orange?</button>
+
+    <div class="alert alert-primary">
+        I'm an alert
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+</body>
+
+</html>
